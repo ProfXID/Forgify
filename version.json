@@ -1,7 +1,7 @@
 {
-  "version": "1.0.7",
+  "version": "1.0.8",
   "release_date": "2026-09-27",
-  "download_url": "https://github.com/ProfXID/Forgify/releases/download/v1.0.7/ForgifySetup-v1.0.7.exe",
+  "download_url": "https://github.com/ProfXID/Forgify/releases/download/v1.0.8/ForgifySetup-v1.0.8.exe",
   "mandatory": false,
   "changelog": "- Fitur baru\n- Perbaikan bug"
 }
