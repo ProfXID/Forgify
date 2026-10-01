@@ -1,7 +1,8 @@
 {
-  "version": "1.0.9",
-  "release_date": "2026-09-27",
-  "download_url": "https://github.com/ProfXID/Forgify/releases/download/v1.0.9/ForgifySetup-v1.0.9.exe",
+  "version": "1.0.10",
+  "release_date": "2026-10-01",
+  "download_url": "https://github.com/ProfXID/Forgify/releases/download/v1.0.10/ForgifySetup-v1.0.10.exe",
+  "sha256": "12D9C700B22F8C19FE17DD57BC4FB2F18BBBD24475B0824D782711389683CB2A",
   "mandatory": false,
-  "changelog": "- Added optional Start with Windows.\n- Improved update and project removal safety.\n- Same-version installs are blocked; upgrades skip the EULA."
+  "changelog": "- Fixed a black window appearing when Forgify starts with Windows.\n- Background startup now initializes tray and hosting services without showing the main window.\n- Normal launches keep the welcome animation, while invalid configurations still show onboarding."
 }
