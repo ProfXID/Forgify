@@ -2,6 +2,42 @@
 
 All notable changes to Forgify are documented in this file.
 
+## [1.0.11] - 2026-10-02
+
+### Fixed
+
+- Fixed a dark or black startup view by starting initialization after the first WPF content render and keeping the Projects Hub visible beneath the welcome animation.
+- Silenced notifications during Windows shutdown, restart, logoff, and manual exit. Audio players are stopped and released, tray notifications are removed, and queued notifications or window restores are suppressed.
+- Removed the gray background behind the branch list during project loading. Branch selection, creation, and deletion remain disabled until the Git operation finishes.
+
+### Changed
+
+- **Start with Windows** now opens the normal application window with the welcome animation for configured accounts.
+- Legacy `/background` and `--background` arguments now follow the same visible startup flow. Incomplete account or Host Vault setup still opens onboarding.
+- Updated startup descriptions in all six interface languages.
+- Aligned the application, runtime, launcher, updater, and installer version to `1.0.11`.
+
+### Release verification
+
+- GitEngineCheck: **44/44 tests passed**.
+- Self-contained .NET 10 `win-x64` publish, runtime obfuscation, and StandaloneCheck completed successfully.
+- WPF checks passed against the published application and runtime: welcome/Hub rendering, tray restore, simulated shutdown/logoff, quiet manual exit, and branch controls disabled during loading and restored afterward.
+- Inno Setup 6.7.3 compilation completed successfully.
+- The launcher, application executable, runtime, and installer have valid Run2Go Studio Authenticode signatures.
+- The standalone ZIP contains all 251 package files; checked binary and localization payloads match the standalone folder.
+- One existing `SYSLIB0057` warning remains in updater certificate loading. Actual Windows login/shutdown and installer execution were not tested in this release check.
+
+### Artifacts
+
+- Installer: `installer/ForgifySetup-v1.0.11.exe`
+- Installer size: `45,966,360 bytes`
+- Installer SHA-256: `33F0F2AE35B7FF7D23780FF3FE7D7BA8A53229CB6625178474EEFEFF58832F8C`
+- Standalone ZIP: `installer/Forgify-v1.0.11-win-x64.zip`
+- ZIP size: `63,603,260 bytes`
+- ZIP SHA-256: `EF3D2F82BFF41D1878D96A5B3858C3B28FDC37A15EFC42A5F5901B197F04F002`
+- Checksum file: `installer/SHA256SUMS-v1.0.11.txt`
+- The update manifest targets GitHub release tag `v1.0.11` and contains the signed installer SHA-256.
+
 ## [1.0.10] - 2026-10-01
 
 ### Fixed
