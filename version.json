@@ -1,8 +1,8 @@
 {
-  "version": "1.0.11",
-  "release_date": "2026-10-02",
-  "download_url": "https://github.com/ProfXID/Forgify/releases/download/v1.0.11/ForgifySetup-v1.0.11.exe",
-  "sha256": "33F0F2AE35B7FF7D23780FF3FE7D7BA8A53229CB6625178474EEFEFF58832F8C",
+  "version": "1.0.12",
+  "release_date": "2026-10-08",
+  "download_url": "https://github.com/ProfXID/Forgify/releases/download/v1.0.12/ForgifySetup-v1.0.12.exe",
+  "sha256": "CBF61F27D065DE464FF1DD1050E3FCDFC6E297232E2DF170C5D72373F0E5CEA8",
   "mandatory": false,
-  "changelog": "- Start with Windows now opens the normal window and welcome animation.\n- Fixed a dark or black startup view by starting initialization after the first content render.\n- Silenced notifications and stopped queued audio, balloons, and window restores during Windows shutdown, restart, logoff, and manual exit.\n- Removed the gray branch-list background during project loading while keeping branch controls disabled until Git operations finish.\n- Updated startup descriptions in all six interface languages."
+  "changelog": "- Fixed false Everything Up to Date on clients left running while the host receives new commits.\n- SmartSync now fetches and verifies host state before choosing Pull, Push, or Up to Date.\n- Expired or failed host checks remain unverified; local refresh cannot turn a failed fetch green.\n- Fetch uses a 120-second inactivity timeout with progress and cancellation, allowing active transfers longer than six seconds.\n- Fixed misleading sync completion and workflow status after failed host checks."
 }
