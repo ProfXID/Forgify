@@ -2,6 +2,39 @@
 
 All notable changes to Forgify are documented in this file.
 
+## [1.0.12] - 2026-10-08
+
+### Fixed
+
+- Fixed false Everything Up to Date on clients left running while the host receives new commits. Host verification expires after 30 seconds and is scoped to the project path, branch, and remote URL.
+- SmartSync fetches and verifies the host before selecting Pull, Push, or Up to Date, then releases the interaction lock before the next action.
+- Failed host checks remain Offline/FAILED after local refresh. Focus/restore checks stale state, and peer completion invalidates cached host evidence.
+- Fetch uses progress, cancellation, and a 120-second inactivity timeout. An active transfer can exceed six seconds; another origin cannot hide a host failure.
+
+### Changed
+
+- Aligned application, runtime, launcher, UI, updater, and installer metadata to `1.0.12` so existing `1.0.11` installations can upgrade.
+- Installer builds use `installer/v.<version>/`; previous release artifacts are preserved.
+
+### Release verification
+
+- GitEngineCheck: **44/44 passed against the source build**. The full suite uses private-method reflection that is incompatible with runtime obfuscation.
+- Published runtime passed `--sync-safety` and `--remote-sync`, including stale state, restart, branch/URL isolation, failed fetch/local refresh, origin isolation, incoming commits, active fetch longer than six seconds, and cancellation.
+- Published application/runtime passed WPF remote-sync, welcome/Hub, tray restore, simulated shutdown/logoff, and manual-exit checks.
+- Self-contained .NET 10 `win-x64` publish, runtime obfuscation, StandaloneCheck with Git/LFS transfer and invitation/clone flows, and Inno Setup compilation passed.
+- Launcher, application executable, runtime, and installer have valid Run2Go Studio Authenticode signatures matching the updater signer pin.
+- ZIP contents match all 251 standalone files, including six localization XML files. Final signed artifact checksums match the release manifest.
+- One existing `SYSLIB0057` warning remains. Actual two-PC operation and installer execution were not tested; artifacts have not been uploaded.
+
+### Artifacts
+
+- Installer: `installer/v.1.0.12/ForgifySetup-v1.0.12.exe` (45,968,776 bytes)
+- Installer SHA-256: `CBF61F27D065DE464FF1DD1050E3FCDFC6E297232E2DF170C5D72373F0E5CEA8`
+- Standalone ZIP: `installer/v.1.0.12/Forgify-v1.0.12-win-x64.zip` (61,378,482 bytes)
+- ZIP SHA-256: `F6B608888878678CC999EEE02ACF0D60072A88AF119F70A6B2589010F7498035`
+- Checksums: `installer/v.1.0.12/SHA256SUMS-v1.0.12.txt`
+- Local update manifest targets GitHub tag `v1.0.12`; remote publication remains separate.
+
 ## [1.0.11] - 2026-10-02
 
 ### Fixed
